@@ -9,13 +9,22 @@ const Tabs = props => {
         <span className="title">TRENDING TOPICS:</span>
         {/* map over the tabs provided on your props, create a new Tab component for each one.
             give the tab component a `selectTabHandler`, the `selectedTab`, and the `tab` itself as props*/}
-            {
-              props.tabs.map(i =>
+            
+            {/*props.tabs.map((i) =>
                 <Tab tab={i}
                 selectTabHandler={props.selectTabHandler}
                 selected={props.selectedTab}
                 />
-                )
+              ) */}
+            
+            {
+            props.tabs.map((p, i) => 
+            <Tab key={`${Math.random()}${i}`}
+            tab={p}
+            selectTabHandler={props.selectTabHandler} 
+            selected={props.selectedTab} 
+            />
+            )
             }
       </div>
     </div>
