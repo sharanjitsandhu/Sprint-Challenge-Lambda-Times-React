@@ -35,7 +35,7 @@ const HeaderContainer = styled.div`
   }  
 `;
 
-const Date = styled.span`
+const currentDate = styled.span`
   margin-left: 25px;
   flex: 1;
 `;
@@ -44,14 +44,21 @@ const Temp = styled.span`
   margin-right: 25px;
   flex: 1;
 `;
+var options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+function getDate() {
+  return (new Date()).toLocaleDateString('en-US', options)
+}
+
 
 const Header = () => {
   return (
+   
     <HeaderContainer>
-      <Date>FEBRUARY 22, 2019</Date>
       <h1>Lambda Times</h1>
       <Temp>36°</Temp>
+      <currentDate>{getDate()}</currentDate>
       </HeaderContainer>
+   
   )
 }
 
